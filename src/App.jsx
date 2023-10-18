@@ -1,3 +1,5 @@
+const URL = 'https://example-data.draftbit.com/books';
+
 function App() {
   return (
     <>
