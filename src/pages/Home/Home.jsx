@@ -1,3 +1,4 @@
+import './Home.scss';
 import { useDispatch } from 'react-redux';
 import BooksList from '../../components/BooksList/BooksList';
 import { useEffect } from 'react';
@@ -10,9 +11,12 @@ const Home = () => {
     dispatch(fetchAllBooks());
   }, []);
   return (
-    <div>
-      <BooksList />
-    </div>
+    <section className='home'>
+      <h2></h2>
+      <div className='container'>
+        <BooksList />
+      </div>
+    </section>
   );
 };
 

@@ -4,7 +4,7 @@ const Error = () => {
   const error = useRouteError();
 
   if (error.status === 404) {
-    console.log(error);
+    // console.log(error);
     return (
       <div>
         <Link to='/'>Back to Home</Link>
