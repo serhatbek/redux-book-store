@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Home, BookDetail, Layout, Error } from './pages';
 
-// const URL = 'https://example-data.draftbit.com/books';
 const router = createBrowserRouter([
   {
     path: '/',
