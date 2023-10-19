@@ -1,9 +1,31 @@
-const URL = 'https://example-data.draftbit.com/books';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Home, BookDetail, Layout, Error } from './pages';
+
+// const URL = 'https://example-data.draftbit.com/books';
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <Error />,
+    children: [
+      {
+        index: true,
+        element: <Home />,
+        errorElement: <Error />,
+      },
+      {
+        path: '/book/:bookID',
+        element: <BookDetail />,
+        errorElement: <Error />,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <>
-      <h1>Hello world</h1>
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }
