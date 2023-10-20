@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './BookCard.scss';
+import { MdOutlineReadMore } from 'react-icons/md';
 
 const BookCard = ({ book }) => {
   //   console.log(book);
@@ -22,7 +23,9 @@ const BookCard = ({ book }) => {
         <h5>{authors}</h5>
         <p>Pages: {pages}</p>
       </div>
-      <Link to={`/book/${id}`}>Read More</Link>
+      <Link to={`/book/${id}`}>
+        <MdOutlineReadMore /> Read More
+      </Link>
     </div>
   );
 };

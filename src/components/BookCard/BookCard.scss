@@ -15,6 +15,7 @@
 
   > figure {
     width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 
     img {
       width: 100%;
@@ -39,5 +40,13 @@
   }
   a {
     color: c.$color-primary;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 5px;
+    }
   }
 }
