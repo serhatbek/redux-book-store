@@ -12,7 +12,9 @@ const Home = () => {
   }, []);
   return (
     <section className='home'>
-      <h2></h2>
+      <div className='home__title'>
+        <h2>Books List</h2>
+      </div>
       <div className='container'>
         <BooksList />
       </div>

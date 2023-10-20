@@ -5,6 +5,7 @@
   padding: 24px 0;
   background-color: c.$color-primary;
   box-shadow: c.$box-shadow;
+  position: relative;
 
   .container {
     #{ $self }__logo {
@@ -15,6 +16,13 @@
         padding: 0 6px;
         border: 2px solid c.$color-tertiary;
         border-radius: 8px;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+
+        svg {
+          margin-right: 5px;
+        }
 
         span {
           color: c.$font-primary;

@@ -1,4 +1,5 @@
 import '../Header/Header.scss';
+import { BiSolidBook } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -7,6 +8,7 @@ const Header = () => {
       <div className='container'>
         <div className='header__logo'>
           <Link to='/'>
+            <BiSolidBook />
             BOOK
             <span>ERA</span>
           </Link>
