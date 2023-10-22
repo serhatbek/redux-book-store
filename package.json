@@ -1,9 +1,9 @@
 {
   "name": "redux-book-store",
+  "homepage": "https://serhatbek.github.io",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://serhatbek.github.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
