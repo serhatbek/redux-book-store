@@ -1,3 +1,6 @@
+$uniqeid: unique_id();
+$ver: unique_id();
+
 @mixin media($point) {
   @if $point == mobile {
     @media (max-width: 480px) {
@@ -12,4 +15,8 @@
       @content;
     }
   }
+}
+
+@mixin imageCacheBust($url) {
+  background-image: #{'url("'}#{$url}#{'?v='}#{$ver}#{'")'};
 }

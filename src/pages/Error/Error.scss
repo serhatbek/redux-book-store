@@ -1,7 +1,9 @@
 @use '../../assets/styles/colors' as c;
+@use '../../assets/styles/mixins' as m;
 
 .error-page {
-  background-image: url('../../assets/svg/undraw-pnf.svg');
+  // background-image: url('../../assets/svg/undraw-pnf.svg');
+  @include m.imageCacheBust('../../assets/svg/undraw-pnf.svg');
   background-repeat: no-repeat;
   background-position: left bottom;
   background-size: contain;
@@ -40,6 +42,7 @@
   }
 
   &--single {
-    background-image: url('../../assets/svg//undraw_location_search.svg');
+    // background-image: url('../../assets/svg//undraw_location_search.svg');
+    @include m.imageCacheBust('../../assets/svg//undraw_location_search.svg');
   }
 }
