@@ -2,7 +2,10 @@ import './BookDetail.scss';
 import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchSingleBook } from '../../features/books/booksSlice';
+import {
+  fetchSingleBook,
+  removeSelectedBook,
+} from '../../features/books/booksSlice';
 
 const BookDetail = () => {
   const { bookID } = useParams();
@@ -12,6 +15,10 @@ const BookDetail = () => {
   // console.log('single book page', singleBook);
   useEffect(() => {
     dispatch(fetchSingleBook(numBookID));
+
+    return () => {
+      dispatch(removeSelectedBook());
+    };
   }, [numBookID]);
 
   if (isLoading) {

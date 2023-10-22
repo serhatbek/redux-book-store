@@ -39,7 +39,11 @@ const initialState = {
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {},
+  reducers: {
+    removeSelectedBook: (state) => {
+      state.singleBook = {};
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllBooks.pending, (state) => {
@@ -67,5 +71,5 @@ export const booksSlice = createSlice({
   },
 });
 
-export const {} = booksSlice.actions;
+export const { removeSelectedBook } = booksSlice.actions;
 export default booksSlice.reducer;

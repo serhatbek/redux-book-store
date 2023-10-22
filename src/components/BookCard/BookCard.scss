@@ -103,6 +103,7 @@
     visibility: hidden;
     overflow: hidden !important;
     opacity: 0;
+    transform: scale(0);
 
     svg {
       width: 32px;
@@ -116,5 +117,6 @@
     z-index: 1;
     visibility: visible;
     opacity: 1;
+    transform: scale(1);
   }
 }
