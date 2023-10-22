@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import './BookCard.scss';
-import { MdOutlineReadMore } from 'react-icons/md';
+import { TbHandClick } from 'react-icons/tb';
 
 const BookCard = ({ book }) => {
   //   console.log(book);
@@ -14,19 +14,21 @@ const BookCard = ({ book }) => {
     rating,
   } = book;
   return (
-    <div className='book-card'>
+    <Link className='book-card' to={`/book/${id}`}>
       <figure>
         <img src={img} alt={title} />
       </figure>
       <div>
         <h4>{title}</h4>
         <h5>{authors}</h5>
-        <p>Pages: {pages}</p>
+        <p>
+          <span>Pages:</span> {pages}
+        </p>
       </div>
-      <Link to={`/book/${id}`}>
-        <MdOutlineReadMore /> Read More
-      </Link>
-    </div>
+      <div className='book-card--hover'>
+        <TbHandClick /> Read More
+      </div>
+    </Link>
   );
 };
 
