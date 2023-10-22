@@ -1,7 +1,7 @@
 import './Home.scss';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import BooksList from '../../components/BooksList/BooksList';
-import { useEffect } from 'react';
 import { fetchAllBooks } from '../../features/books/booksSlice';
 
 const Home = () => {

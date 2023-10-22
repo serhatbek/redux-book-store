@@ -22,7 +22,7 @@ export const fetchSingleBook = createAsyncThunk(
       const response = await axios.get(URL);
       const data = await response.data;
       const singleBook = data.find((book) => book.id === id);
-      console.log('singleBook', singleBook);
+      //   console.log('singleBook', singleBook);
       return singleBook;
     } catch (error) {
       console.log(error.message);

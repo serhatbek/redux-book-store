@@ -1,0 +1,44 @@
+@use '../../assets/styles/mixins' as m;
+@use '../../assets/styles/colors' as c;
+
+.book-detail {
+  padding: 50px 0;
+
+  .container {
+    .single-book {
+      display: flex;
+
+      @include m.media(tablet) {
+        flex-direction: column;
+      }
+
+      figure {
+        max-width: 260px;
+        width: 100%;
+        height: 400px;
+        margin-right: 20px;
+        background-color: rgba(0, 0, 0, 0.4);
+        flex-shrink: 0;
+
+        @include m.media(tablet) {
+          margin-right: 0;
+          margin-bottom: 30px;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+
+      &--btn {
+        display: block;
+        width: fit-content;
+        padding: 10px 30px;
+        background-color: c.$color-primary;
+        color: c.$font-secondary;
+        border-radius: 4px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
