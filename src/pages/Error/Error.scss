@@ -1,0 +1,33 @@
+@use '../../assets/styles/colors' as c;
+
+.error-page {
+  background-image: url('../../assets/svg/undraw-pnf.svg');
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: contain;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: c.$color-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &--btn {
+    display: block;
+    width: fit-content;
+    padding: 10px 30px;
+    background-color: c.$color-primary;
+    color: c.$font-secondary;
+    border-radius: 4px;
+    margin-top: 10px;
+    box-shadow: c.$box-shadow;
+
+    &:hover {
+      box-shadow: c.$box-shadow-hover;
+    }
+  }
+}
