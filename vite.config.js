@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: '/redux-book-store/',
+  base: 'dist',
   plugins: [react()],
   build: {
     outDir: 'dist',
