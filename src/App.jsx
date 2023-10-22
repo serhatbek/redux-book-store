@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Home, BookDetail, Layout, Error } from './pages';
+import { Home, BookDetail, Layout, Error, SinglePageError } from './pages';
 
 const router = createBrowserRouter([
   {
@@ -10,12 +10,12 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
-        errorElement: <Error />,
+        errorElement: <SinglePageError />,
       },
       {
         path: '/book/:bookID',
         element: <BookDetail />,
-        errorElement: <Error />,
+        errorElement: <SinglePageError />,
       },
     ],
   },

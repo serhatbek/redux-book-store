@@ -1,6 +1,6 @@
 import './BookDetail.scss';
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import {
   fetchSingleBook,
@@ -13,6 +13,7 @@ const BookDetail = () => {
   const dispatch = useDispatch();
   const { isLoading, singleBook } = useSelector((state) => state.books);
   // console.log('single book page', singleBook);
+
   useEffect(() => {
     dispatch(fetchSingleBook(numBookID));
 

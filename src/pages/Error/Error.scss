@@ -15,6 +15,14 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: 10px;
+
+  > h2,
+  p {
+    font-size: 42px;
+    font-weight: 700;
+    color: c.$font-primary;
+  }
 
   &--btn {
     display: block;
@@ -29,5 +37,9 @@
     &:hover {
       box-shadow: c.$box-shadow-hover;
     }
+  }
+
+  &--single {
+    background-image: url('../../assets/svg//undraw_location_search.svg');
   }
 }
