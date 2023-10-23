@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/redux-book-store/',
   plugins: [react()],
   build: {
-    outDir: 'dist',
+    // outDir: 'dist',
     assetsDir: './assets',
   },
 });
