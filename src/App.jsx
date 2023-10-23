@@ -1,9 +1,13 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from 'react-router-dom';
 import { Home, BookDetail, Layout, Error, SinglePageError } from './pages';
-
-const router = createBrowserRouter([
+createHashRouter;
+const router = createHashRouter([
   {
-    path: '/redux-book-store',
+    path: '/',
     element: <Layout />,
     errorElement: <Error />,
     children: [
