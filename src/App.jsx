@@ -3,9 +3,9 @@ import { Home, BookDetail, Layout, Error, SinglePageError } from './pages';
 
 const router = createBrowserRouter([
   {
-    path: 'redux-book-store/',
+    path: '/redux-book-store',
     element: <Layout />,
-    // errorElement: <Error />,
+    errorElement: <Error />,
     children: [
       {
         index: true,
