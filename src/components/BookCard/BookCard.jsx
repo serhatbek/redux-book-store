@@ -1,11 +1,8 @@
 import './BookCard.scss';
-// import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { TbHandClick } from 'react-icons/tb';
-// import { fetchSingleBook } from '../../features/books/booksSlice';
 
 const BookCard = ({ book }) => {
-  //   const dispatch = useDispatch();
   const { id, title, authors, image_url: img, num_pages: pages } = book;
 
   return (

@@ -1,33 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { fetchBook, fetchBooks } from '../../utils/fetchData';
 
-const URL = 'https://example-data.draftbit.com/books';
-export const fetchAllBooks = createAsyncThunk(
-  'books/fetchAllBooks',
-  async () => {
-    try {
-      const response = await axios.get(URL);
-      const data = await response.data;
-      return data;
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+const url = 'https://example-data.draftbit.com/books';
+export const fetchAllBooks = createAsyncThunk('books/fetchAllBooks', async () =>
+  fetchBooks(url)
 );
 
 export const fetchSingleBook = createAsyncThunk(
   'books/fetchSingleBook',
-  async (id) => {
-    try {
-      const response = await axios.get(URL);
-      const data = await response.data;
-      const singleBook = data.find((book) => book.id === id);
-      //   console.log('singleBook', singleBook);
-      return singleBook;
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+  async (id) => fetchBook(url, id)
 );
 
 const initialState = {
