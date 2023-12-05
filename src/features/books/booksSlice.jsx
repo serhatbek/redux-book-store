@@ -1,9 +1,14 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchBook, fetchBooks } from '../../utils/fetchData';
 
-const url = 'https://example-data.draftbit.com/books';
-export const fetchAllBooks = createAsyncThunk('books/fetchAllBooks', async () =>
-  fetchBooks(url)
+const limitNum = 12;
+// const url = 'https://example-data.draftbit.com/books';
+export const fetchAllBooks = createAsyncThunk(
+  'books/fetchAllBooks',
+  async (count) => {
+    const url = `https://example-data.draftbit.com/books?_limit=${count}`;
+    return fetchBooks(url);
+  }
 );
 
 export const fetchSingleBook = createAsyncThunk(
