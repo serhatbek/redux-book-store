@@ -6,13 +6,13 @@ import {
   fetchSingleBook,
   removeSelectedBook,
 } from '../../features/books/booksSlice';
+import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const BookDetail = () => {
   const { bookID } = useParams();
   const numBookID = Number(bookID);
   const dispatch = useDispatch();
   const { isLoading, singleBook } = useSelector((state) => state.books);
-  // console.log('single book page', singleBook);
 
   useEffect(() => {
     dispatch(fetchSingleBook(numBookID));
@@ -23,14 +23,7 @@ const BookDetail = () => {
   }, [numBookID]);
 
   if (isLoading) {
-    return (
-      <div className='loading'>
-        <div className='lds-ripple'>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner />;
   }
 
   const {

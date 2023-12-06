@@ -1,8 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchBook, fetchBooks } from '../../utils/fetchData';
 
-const limitNum = 12;
-// const url = 'https://example-data.draftbit.com/books';
 export const fetchAllBooks = createAsyncThunk(
   'books/fetchAllBooks',
   async (count) => {
@@ -13,7 +11,10 @@ export const fetchAllBooks = createAsyncThunk(
 
 export const fetchSingleBook = createAsyncThunk(
   'books/fetchSingleBook',
-  async (id) => fetchBook(url, id)
+  async (id) => {
+    const url = `https://example-data.draftbit.com/books`;
+    return fetchBook(url, id);
+  }
 );
 
 const initialState = {
@@ -36,7 +37,6 @@ export const booksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchAllBooks.fulfilled, (state, { payload }) => {
-        // console.log('payload', payload);
         state.books = payload;
         state.isLoading = false;
       })
@@ -47,7 +47,6 @@ export const booksSlice = createSlice({
         state.isLoading == true;
       })
       .addCase(fetchSingleBook.fulfilled, (state, { payload }) => {
-        // console.log('payload', payload);
         state.singleBook = payload;
         state.isLoading = false;
       })

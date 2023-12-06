@@ -4,4 +4,10 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+
+  .isHidden {
+    width: 250px;
+    height: 430px;
+    background: transparent;
+  }
 }
