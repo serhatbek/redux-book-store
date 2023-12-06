@@ -43,18 +43,20 @@ const BooksList = () => {
     dispatch(fetchAllBooks(booksToShow));
   }, [booksToShow]);
 
-  if (isLoading) {
-    return <LoadingSpinner />;
-  }
-
   return (
-    <div className='book-list'>
-      {books?.map((book) => (
-        <BookCard key={book.id} book={book} />
-      ))}
-
-      <div className='isHidden' ref={containerRef}></div>
-    </div>
+    <>
+      <div className='book-list'>
+        {books?.map((book) => (
+          <BookCard key={book.id} book={book} />
+        ))}
+        <div className='isHidden' ref={containerRef}></div>
+      </div>
+      {isLoading && (
+        <div className='flex-center'>
+          <LoadingSpinner />
+        </div>
+      )}
+    </>
   );
 };
 
