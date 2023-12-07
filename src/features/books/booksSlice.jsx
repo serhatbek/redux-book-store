@@ -37,7 +37,12 @@ export const booksSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(fetchAllBooks.fulfilled, (state, { payload }) => {
-        state.books = payload;
+        const combinedArray = [...state.books, ...payload];
+        const uniqueBooks = Array.from(
+          new Set(combinedArray.map((book) => book.id))
+        ).map((id) => combinedArray.find((book) => book.id === id));
+
+        state.books = uniqueBooks;
         state.isLoading = false;
       })
       .addCase(fetchAllBooks.rejected, (state, { payload }) => {

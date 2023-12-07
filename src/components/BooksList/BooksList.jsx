@@ -9,7 +9,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 const BooksList = () => {
   const { books, isLoading } = useSelector((state) => state.books);
   const dispatch = useDispatch();
-  const [booksToShow, setBooksToShow] = useState(10);
+  const [booksToShow, setBooksToShow] = useState(12);
   const [visible, setVisible] = useState(false);
   const containerRef = useRef(null);
 
@@ -34,9 +34,14 @@ const BooksList = () => {
   }, [containerRef, options]);
 
   useEffect(() => {
+    let timer;
     if (visible) {
-      setBooksToShow((prev) => prev + 10);
+      timer = setTimeout(() => {
+        setBooksToShow((prev) => prev + 10);
+      }, 2000);
     }
+
+    return () => clearTimeout(timer);
   }, [visible]);
 
   useEffect(() => {
