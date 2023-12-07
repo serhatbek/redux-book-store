@@ -38,7 +38,7 @@ const BooksList = () => {
     if (visible) {
       timer = setTimeout(() => {
         setBooksToShow((prev) => prev + 10);
-      }, 2000);
+      }, 1000);
     }
 
     return () => clearTimeout(timer);
